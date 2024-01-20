@@ -1,13 +1,19 @@
 package software.ulpgc.imageviewer.swing;
 
+import software.ulpgc.imageviewer.Command;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Mainframe extends JFrame {
 
     private ImageDisplay imageDisplay;
+    private final Map<String, Command> commands;
 
     public Mainframe(){
+        this.commands = new HashMap<>();
         setTitle("ImageViewer");
 //        this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -16,6 +22,14 @@ public class Mainframe extends JFrame {
 //        this.setUndecorated(true);
         setLayout(new BorderLayout());
         add(imageDisplay());
+        add(createButton("<"), BorderLayout.WEST);
+        add(createButton(">"), BorderLayout.EAST);
+    }
+
+    private Component createButton(String s) {
+        JButton button = new JButton(s);
+        button.addActionListener(x->commands.get(s).execute());
+        return button;
     }
 
     private Component imageDisplay() {
