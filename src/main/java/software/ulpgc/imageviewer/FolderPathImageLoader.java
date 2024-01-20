@@ -39,10 +39,17 @@ public class FolderPathImageLoader implements ImageLoader{
     }
 
     public String filesToString() {
-        System.out.println("Haciendo el filesToString con tamaño " + files.size());
         StringBuilder result = new StringBuilder();
         for (File file : files) {
             result.append(file.toString()).append("\n");
+        }
+        return result.toString();
+    }
+
+    public String filesToString2() {
+        StringBuilder result = new StringBuilder();
+        for (File file : files) {
+            result.append(file.getAbsolutePath()).append("\n");
         }
         return result.toString();
     }
@@ -54,17 +61,17 @@ public class FolderPathImageLoader implements ImageLoader{
         return new Image() {
             @Override
             public String path() {
-                return files.get(0).getAbsolutePath();
+                return files.get(0).toString();
             }
 
             @Override
             public String next() {
-                return null;
+                return files.get(1).toString();
             }
 
             @Override
             public String prev() {
-                return null;
+                return files.get(-1).toString();
             }
         };
     }
