@@ -1,12 +1,9 @@
 package software.ulpgc.imageviewer;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.*;
 
 public class FolderPathImageLoader implements ImageLoader{
     private final List<File> files;
@@ -56,23 +53,31 @@ public class FolderPathImageLoader implements ImageLoader{
 
     @Override
     public Image load() {
-        if(!valid){return null;}
+        if(!valid){
+            return linkImages();
+        } else {return null;}
+    }
 
-        return new Image() {
-            @Override
-            public String path() {
-                return files.get(0).toString();
-            }
+    private Image linkImages() {
+        Image first;
+        for(int i = 0;i<files.size();i++){
+            first = new Image(){
+                @Override
+                public String path() {
+                    return files.get(i).toString();
+                }
 
-            @Override
-            public String next() {
-                return files.get(1).toString();
-            }
+                @Override
+                public Image next() {
+                    if(i==files.size()-1){}
+                    return null;
+                }
 
-            @Override
-            public String prev() {
-                return files.get(-1).toString();
+                @Override
+                public Image prev() {
+                    return null;
+                }
             }
-        };
+        }
     }
 }

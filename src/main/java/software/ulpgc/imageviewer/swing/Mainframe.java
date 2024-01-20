@@ -1,6 +1,7 @@
 package software.ulpgc.imageviewer.swing;
 
 import software.ulpgc.imageviewer.Command;
+import software.ulpgc.imageviewer.NextImageCommand;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,5 +41,9 @@ public class Mainframe extends JFrame {
 
     public ImageDisplay getImageDisplay(){
         return imageDisplay;
+    }
+
+    public void add(String name, Command command) {
+        commands.put(name, command);
     }
 }

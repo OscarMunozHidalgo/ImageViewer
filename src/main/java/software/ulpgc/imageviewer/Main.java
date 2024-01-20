@@ -10,8 +10,9 @@ public class Main {
         FolderPathImageLoader loader = new FolderPathImageLoader(new File("C:/Users/Usuario/Pictures/Camera Roll"));
         Image image = loader.load();
         mainframe.getImageDisplay().show(image);
-//        System.out.println(loader.filesToString());
-//        System.out.println(loader.filesToString2());
+        mainframe.add(">", new NextImageCommand(mainframe.getImageDisplay()));
+        mainframe.add("<", new PrevImageCommand(mainframe.getImageDisplay()));
+
         mainframe.setVisible(true);
     }
 

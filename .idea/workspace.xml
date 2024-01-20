@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c922ee28-ce2e-4f42-90de-ecbf47ec026f" name="Changes" comment="SwingImageDisplayFinished with functional resize">
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/Command.java" afterDir="false" />
+    <list default="true" id="c922ee28-ce2e-4f42-90de-ecbf47ec026f" name="Changes" comment="Fixed resize accuracy bug, Implemented Jbuttons, Started next and prev commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/FolderPathImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/FolderPathImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/NextImageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/NextImageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/PrevImageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/PrevImageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/swing/Mainframe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/swing/Mainframe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/swing/SwingImageDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/imageviewer/swing/SwingImageDisplay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,12 +74,21 @@
       <option name="project" value="LOCAL" />
       <updated>1705788413808</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed resize accuracy bug, Implemented Jbuttons, Started next and prev commands">
+      <option name="closed" value="true" />
+      <created>1705790614494</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705790614494</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ImageLoader finished" />
     <MESSAGE value="SwingImageDisplayFinished with functional resize" />
-    <option name="LAST_COMMIT_MESSAGE" value="SwingImageDisplayFinished with functional resize" />
+    <MESSAGE value="Fixed resize accuracy bug, Implemented Jbuttons, Started next and prev commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed resize accuracy bug, Implemented Jbuttons, Started next and prev commands" />
   </component>
 </project>
