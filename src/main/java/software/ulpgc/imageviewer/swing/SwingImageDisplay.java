@@ -17,6 +17,7 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
     public void show(Image image) {
         this.image = image;
         this.bitmap = read(image.path());
+        this.repaint();
     }
 
     private BufferedImage read(String path) {
@@ -47,7 +48,9 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
 
         int x = (this.getWidth() - resizedImage.getWidth()) / 2;
         int y = (this.getHeight() - resizedImage.getHeight()) / 2;
+
         g.drawImage(resizedImage,x,y,null);
+        g.dispose();
     }
 
     private int[] getResizedSize() {
@@ -72,7 +75,7 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
 
         Graphics graphics = resizedImage.createGraphics();
         graphics.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
-        graphics.dispose();
+//        graphics.dispose();
 
         return resizedImage;
     }

@@ -53,31 +53,27 @@ public class FolderPathImageLoader implements ImageLoader{
 
     @Override
     public Image load() {
-        if(!valid){
-            return linkImages();
+        if(valid){
+            return linkImages(0);
         } else {return null;}
     }
 
-    private Image linkImages() {
-        Image first;
-        for(int i = 0;i<files.size();i++){
-            first = new Image(){
-                @Override
-                public String path() {
-                    return files.get(i).toString();
-                }
-
-                @Override
-                public Image next() {
-                    if(i==files.size()-1){}
-                    return null;
-                }
-
-                @Override
-                public Image prev() {
-                    return null;
-                }
+    private Image linkImages(int position) {
+        return new Image() {
+            @Override
+            public String path() {
+                return files.get(position).toString();
             }
-        }
+
+            @Override
+            public Image next() {
+                return linkImages((position+1) % files.size());
+            }
+
+            @Override
+            public Image prev() {
+                return linkImages((position-1+ files.size()) % files.size());
+            }
+        };
     }
 }

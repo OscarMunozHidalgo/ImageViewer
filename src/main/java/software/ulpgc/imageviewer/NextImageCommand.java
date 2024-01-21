@@ -12,6 +12,7 @@ public class NextImageCommand implements Command{
 
     @Override
     public void execute() {
+        System.out.println(imageDisplay.getImage().next().path());
         imageDisplay.show(imageDisplay.getImage().next());
     }
 }

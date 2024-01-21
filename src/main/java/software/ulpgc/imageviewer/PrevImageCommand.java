@@ -11,6 +11,7 @@ public class PrevImageCommand implements Command{
 
     @Override
     public void execute() {
+        System.out.println(imageDisplay.getImage().prev().path());
         imageDisplay.show(imageDisplay.getImage().prev());
     }
 }

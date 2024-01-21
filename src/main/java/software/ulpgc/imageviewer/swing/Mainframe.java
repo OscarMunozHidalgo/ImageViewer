@@ -29,7 +29,7 @@ public class Mainframe extends JFrame {
 
     private Component createButton(String s) {
         JButton button = new JButton(s);
-        button.addActionListener(x->commands.get(s).execute());
+        button.addActionListener(x->{commands.get(s).execute();});
         return button;
     }
 
